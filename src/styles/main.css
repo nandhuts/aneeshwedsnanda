@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    --color-ivory: #FAF7F2;
+    --color-ivory-light: #FDFCF9;
+    --color-cream: #F4EFEB;
+    --color-beige: #EAE2D8;
+    --color-taupe: #786F66;
+    --color-taupe-light: #A3998F;
+    --color-charcoal: #201D1A;
+    --color-gold: #C2A366;
+    --color-gold-light: #D9C18F;
+    --color-gold-dark: #9A7B40;
+    --color-sage: #8F9E89;
+    --color-sage-soft: #D6DEC9;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+    background-color: var(--color-ivory);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Custom selection highlight in champagne gold */
+  ::selection {
+    background-color: rgba(194, 163, 102, 0.28);
+    color: #1a1714;
+  }
+}
+
+/* Typography Utility Classes */
+.font-serif-luxury {
+  font-family: var(--font-serif);
+}
+
+.font-display-luxury {
+  font-family: var(--font-display);
+}
+
+.font-sans-clean {
+  font-family: var(--font-sans);
+}
+
+/* Paper Grain Texture Overlay */
+.paper-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Soft Vignette Overlay on Hero */
+.cinematic-vignette {
+  background: radial-gradient(circle at center, rgba(0,0,0,0) 55%, rgba(20, 16, 12, 0.35) 100%);
+}
+
+/* Champagne Gold Foil Gradient */
+.gold-foil-text {
+  background: linear-gradient(135deg, #B89352 0%, #DFCA9E 50%, #A68344 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-foil-border {
+  border-color: rgba(194, 163, 102, 0.32);
+}
+
+/* Minimalist Blended Hero Portrait - Soft edge fade into warm ivory */
+.hero-image-blended {
+  mask-image: radial-gradient(ellipse 78% 85% at 50% 46%, black 50%, rgba(0, 0, 0, 0.45) 75%, transparent 98%);
+  -webkit-mask-image: radial-gradient(ellipse 78% 85% at 50% 46%, black 50%, rgba(0, 0, 0, 0.45) 75%, transparent 98%);
+}
+
+.hero-image-aura {
+  background: radial-gradient(circle at 50% 46%, rgba(194, 163, 102, 0.12) 0%, rgba(250, 247, 242, 0) 70%);
+}
+
+.card-luxury {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(194, 163, 102, 0.24);
+  box-shadow: 0 10px 30px -10px rgba(35, 25, 15, 0.05);
+}
+
+/* Botanical Line Accent Divider */
+.botanical-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.botanical-divider::before,
+.botanical-divider::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, rgba(194, 163, 102, 0.35), transparent);
+}
+
+/* Floating Audio Visualizer Bars */
+@keyframes soundwave {
+  0%, 100% { height: 4px; }
+  50% { height: 16px; }
+}
+
+.wave-bar-1 { animation: soundwave 1.1s ease-in-out infinite; }
+.wave-bar-2 { animation: soundwave 0.8s ease-in-out infinite 0.2s; }
+.wave-bar-3 { animation: soundwave 1.3s ease-in-out infinite 0.4s; }
+
+/* Subtle Scroll Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Petal Canvas fixed overlay */
+#petal-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Accessibility: Prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .wave-bar-1, .wave-bar-2, .wave-bar-3 {
+    animation: none !important;
+  }
+}

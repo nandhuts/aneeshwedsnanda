@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Aneesh Albert &amp; Nanda Rajan | Wedding Invitation</title>
+  <meta name="description" content="Join us as we begin our beautiful new chapter together on 5 October 2026 at St. Joseph Malankara Catholic Church, Punalur.">
+  <meta name="author" content="Aneesh Albert &amp; Nanda Rajan">
+  <meta name="theme-color" content="#FAF7F2">
+
+  <!-- Open Graph / WhatsApp Sharing Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aneesh Albert &amp; Nanda Rajan | Wedding Invitation">
+  <meta property="og:description" content="Join us as we begin our beautiful new chapter together on 5 October 2026.">
+  <meta property="og:image" content="/images/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Aneesh &amp; Nanda Wedding">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aneesh Albert &amp; Nanda Rajan | Wedding Invitation">
+  <meta name="twitter:description" content="Join us as we begin our beautiful new chapter together on 5 October 2026.">
+  <meta name="twitter:image" content="/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+  <!-- Preconnect & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-[#FAF7F2] text-[#201D1A] antialiased selection:bg-[#C2A366]/20 relative">
+
+  <!-- Tactile Paper & Film Grain Overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <!-- Ambient Floating Petals Canvas -->
+  <canvas id="petal-canvas" aria-hidden="true"></canvas>
+
+  <!-- =========================================================================
+       1. OPENING EXPERIENCE OVERLAY (Fades seamlessly in 1.2s)
+       ========================================================================= -->
+  <div id="intro-curtain" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FAF7F2] transition-opacity duration-1000">
+    <div id="intro-monogram" class="flex flex-col items-center space-y-4 px-6 text-center animate-pulse">
+      <div class="w-16 h-16 rounded-full border border-[#C2A366]/40 flex items-center justify-center shadow-sm">
+        <span class="font-serif-luxury text-2xl text-[#201D1A] tracking-wider">A &amp; N</span>
+      </div>
+      <p class="font-serif-luxury text-sm tracking-[0.35em] text-[#786F66] uppercase">Wedding Invitation</p>
+      <div class="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#C2A366]/60 to-transparent"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FLOATING AUDIO CONTROLLER & FIRST-INTERACT HINT
+       ========================================================================= -->
+  <aside aria-label="Music Controls" class="fixed bottom-6 left-6 z-40 flex items-center space-x-2.5">
+    <!-- Play Hint Banner -->
+    <div id="music-hint-banner" class="cursor-pointer hidden sm:flex items-center space-x-2 bg-white/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#C2A366]/30 shadow-md text-xs tracking-wider text-[#786F66] transition-all duration-300 hover:text-[#201D1A]">
+      <span class="text-[#C2A366]">♫</span>
+      <span>Play wedding melody</span>
+    </div>
+
+    <!-- Floating Toggle Button -->
+    <button id="music-toggle-btn" 
+            type="button" 
+            aria-label="Play wedding music"
+            class="w-12 h-12 rounded-full bg-white/90 backdrop-blur-md border border-[#C2A366]/35 shadow-lg flex items-center justify-center text-[#201D1A] transition-all duration-300 hover:scale-105 active:scale-95 group focus:outline-none focus:ring-2 focus:ring-[#C2A366]/50">
+      <!-- Muted/Paused Icon -->
+      <span id="music-icon" class="text-base font-serif text-[#C2A366] transition-transform duration-300 group-hover:scale-110">♫</span>
+      
+      <!-- Animated Soundbars (Shown when playing) -->
+      <div id="music-soundbars" class="hidden flex items-end justify-center space-x-0.5 h-4 w-4">
+        <span class="w-[2px] bg-[#C2A366] rounded-full wave-bar-1"></span>
+        <span class="w-[2px] bg-[#C2A366] rounded-full wave-bar-2"></span>
+        <span class="w-[2px] bg-[#C2A366] rounded-full wave-bar-3"></span>
+      </div>
+    </button>
+  </aside>
+
+  <!-- MAIN WRAPPER (Mobile-First Centered Container on larger viewports) -->
+  <main class="w-full max-w-xl mx-auto px-4 sm:px-6 relative z-20 pb-24">
+
+    <!-- =========================================================================
+         2. HERO SECTION
+         ========================================================================= -->
+    <section id="hero" class="min-h-[100svh] flex flex-col justify-between items-center pt-14 pb-12 text-center relative">
+      
+      <!-- Top Eyebrow -->
+      <header class="reveal-on-scroll space-y-2 pt-2">
+        <p class="text-[11px] sm:text-xs font-sans tracking-[0.35em] text-[#786F66] uppercase">WITH LOVE</p>
+        <div class="w-8 h-[1px] bg-[#C2A366]/40 mx-auto"></div>
+      </header>
+
+      <!-- Center Minimalist Blended Couple Portrait -->
+      <div class="reveal-on-scroll my-4 relative flex items-center justify-center">
+        <!-- Subtle Ambient Champagne Aura Glow -->
+        <div class="absolute w-56 h-72 sm:w-64 sm:h-80 rounded-full hero-image-aura pointer-events-none" aria-hidden="true"></div>
+
+        <!-- Small Blended Editorial Portrait -->
+        <div class="relative w-44 h-60 sm:w-52 sm:h-72 overflow-hidden hero-image-blended transition-transform duration-700 hover:scale-[1.02]">
+          <img src="./images/couple-hero.webp" 
+               alt="Aneesh Albert &amp; Nanda Rajan" 
+               loading="eager"
+               fetchpriority="high"
+               class="w-full h-full object-cover object-top filter brightness-[1.01] contrast-[1.01]">
+          
+          <!-- Soft warm cinematic vignette overlay -->
+          <div class="absolute inset-0 cinematic-vignette pointer-events-none"></div>
+        </div>
+      </div>
+
+      <!-- Hero Typography Hierarchy -->
+      <div id="hero-content" class="reveal-on-scroll space-y-4 w-full px-2">
+        <div class="space-y-1">
+          <h1 class="font-serif-luxury text-4xl sm:text-5xl font-light tracking-[0.12em] text-[#201D1A] uppercase leading-none">
+            ANEESH
+          </h1>
+          <p class="font-serif-luxury italic text-2xl sm:text-3xl text-[#C2A366] font-normal my-1">&amp;</p>
+          <h1 class="font-serif-luxury text-4xl sm:text-5xl font-light tracking-[0.12em] text-[#201D1A] uppercase leading-none">
+            NANDA
+          </h1>
+        </div>
+
+        <div class="pt-2 space-y-2">
+          <div class="inline-block px-5 py-1.5 rounded-full border border-[#C2A366]/30 bg-white/40 backdrop-blur-sm">
+            <time datetime="2026-10-05" class="text-xs sm:text-sm font-serif-luxury tracking-[0.25em] text-[#201D1A] uppercase">
+              05 OCTOBER 2026
+            </time>
+          </div>
+          <p class="text-[10px] sm:text-xs font-sans tracking-[0.3em] text-[#786F66] uppercase">
+            A NEW CHAPTER BEGINS
+          </p>
+        </div>
+
+        <!-- Subtle Downward Scroll Indicator -->
+        <a href="#invitation" 
+           aria-label="Scroll to invitation message"
+           class="inline-flex flex-col items-center pt-6 opacity-65 hover:opacity-100 transition-opacity">
+          <span class="text-[9px] uppercase tracking-[0.3em] text-[#786F66] mb-2">Scroll</span>
+          <div class="w-[1px] h-8 bg-gradient-to-b from-[#C2A366] to-transparent animate-pulse"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. INVITATION MESSAGE SECTION
+         ========================================================================= -->
+    <section id="invitation" class="py-24 text-center reveal-on-scroll">
+      <div class="card-luxury p-8 sm:p-12 rounded-[2rem] relative overflow-hidden">
+        
+        <!-- Subtle Botanical Header Motif -->
+        <div class="w-12 h-12 mx-auto mb-6 text-[#C2A366]/70">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M24 4c0 14-8 20-8 28a8 8 0 0016 0c0-8-8-14-8-28z" />
+            <path d="M24 16c-3 4-6 7-6 11" stroke-dasharray="1 2" />
+            <path d="M24 20c3 3 6 6 6 10" stroke-dasharray="1 2" />
+          </svg>
+        </div>
+
+        <blockquote class="font-serif-luxury text-xl sm:text-2xl font-light text-[#201D1A] leading-relaxed max-w-md mx-auto italic mb-8">
+          &ldquo;With grateful hearts and the blessings of our families, we invite you to celebrate the beginning of our forever.&rdquo;
+        </blockquote>
+
+        <!-- Botanical Divider -->
+        <div class="botanical-divider my-8 max-w-xs mx-auto">
+          <div class="w-2 h-2 rotate-45 border border-[#C2A366]"></div>
+        </div>
+
+        <div class="space-y-2">
+          <h2 class="font-serif-luxury text-2xl sm:text-3xl font-medium tracking-[0.18em] text-[#201D1A] uppercase">
+            ANEESH ALBERT
+          </h2>
+          <p class="font-serif-luxury italic text-xl text-[#C2A366]">&amp;</p>
+          <h2 class="font-serif-luxury text-2xl sm:text-3xl font-medium tracking-[0.18em] text-[#201D1A] uppercase">
+            NANDA RAJAN
+          </h2>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-[#C2A366]/20">
+          <p class="font-serif-luxury tracking-[0.25em] text-sm text-[#786F66] uppercase">
+            5 OCTOBER 2026
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. COUPLE SECTION
+         ========================================================================= -->
+    <section id="story" class="py-16 reveal-on-scroll">
+      <div class="text-center space-y-3 mb-10">
+        <p class="text-[11px] font-sans tracking-[0.3em] text-[#786F66] uppercase">OUR STORY</p>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl text-[#201D1A] font-light leading-snug">
+          Two hearts.<br>
+          <span class="italic font-normal text-[#C2A366]">One beautiful beginning.</span>
+        </h2>
+      </div>
+
+      <div class="relative group rounded-[2.5rem] p-3 bg-white/70 backdrop-blur-md border border-[#C2A366]/30 shadow-xl">
+        <div class="overflow-hidden rounded-[2rem] aspect-[4/5] relative">
+          <img src="./images/gallery-closeup.webp" 
+               alt="Aneesh and Nanda smiling together" 
+               loading="lazy"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#201D1A]/60 via-transparent to-transparent"></div>
+          
+          <div class="absolute bottom-6 inset-x-6 text-center text-white">
+            <p class="font-serif-luxury text-xl sm:text-2xl font-light italic">
+              Aneesh &amp; Nanda
+            </p>
+            <p class="text-[11px] uppercase tracking-[0.25em] text-white/80 mt-1">
+              Held by grace, bound by love
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center max-w-md mx-auto px-4">
+        <p class="font-sans text-sm sm:text-base text-[#786F66] leading-relaxed font-light">
+          From quiet conversations to shared dreams, every road has led us to this blessed union. Together with our families, we step into a lifetime of enduring friendship, faith, and devotion.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. COUNTDOWN SECTION
+         ========================================================================= -->
+    <section id="countdown-section" class="py-20 reveal-on-scroll">
+      <div class="card-luxury p-8 sm:p-10 rounded-[2rem] text-center relative">
+        <span class="text-[10px] sm:text-xs font-sans tracking-[0.35em] text-[#786F66] uppercase block mb-3">
+          COUNTING DOWN TO OUR FOREVER
+        </span>
+        <h3 class="font-serif-luxury text-2xl sm:text-3xl text-[#201D1A] font-light mb-8">
+          The Wedding Celebration
+        </h3>
+
+        <!-- Countdown Digits Grid -->
+        <div id="countdown-grid" class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
+          <!-- Days -->
+          <div class="bg-white/80 rounded-2xl p-3 sm:p-4 border border-[#C2A366]/25 shadow-sm">
+            <span id="countdown-days" class="font-serif-luxury text-3xl sm:text-4xl font-light text-[#201D1A] block">--</span>
+            <span class="text-[9px] sm:text-[10px] font-sans tracking-[0.2em] text-[#786F66] uppercase block mt-1">DAYS</span>
+          </div>
+
+          <!-- Hours -->
+          <div class="bg-white/80 rounded-2xl p-3 sm:p-4 border border-[#C2A366]/25 shadow-sm">
+            <span id="countdown-hours" class="font-serif-luxury text-3xl sm:text-4xl font-light text-[#201D1A] block">--</span>
+            <span class="text-[9px] sm:text-[10px] font-sans tracking-[0.2em] text-[#786F66] uppercase block mt-1">HOURS</span>
+          </div>
+
+          <!-- Minutes -->
+          <div class="bg-white/80 rounded-2xl p-3 sm:p-4 border border-[#C2A366]/25 shadow-sm">
+            <span id="countdown-minutes" class="font-serif-luxury text-3xl sm:text-4xl font-light text-[#201D1A] block">--</span>
+            <span class="text-[9px] sm:text-[10px] font-sans tracking-[0.2em] text-[#786F66] uppercase block mt-1">MINS</span>
+          </div>
+
+          <!-- Seconds -->
+          <div class="bg-white/80 rounded-2xl p-3 sm:p-4 border border-[#C2A366]/25 shadow-sm">
+            <span id="countdown-seconds" class="font-serif-luxury text-3xl sm:text-4xl font-light text-[#C2A366] block">--</span>
+            <span class="text-[9px] sm:text-[10px] font-sans tracking-[0.2em] text-[#786F66] uppercase block mt-1">SECS</span>
+          </div>
+        </div>
+
+        <!-- Target Reached Message -->
+        <div id="countdown-completed" class="hidden py-6 font-serif-luxury text-2xl sm:text-3xl text-[#C2A366] font-medium tracking-wide">
+          THE DAY HAS ARRIVED ❤️
+        </div>
+
+        <p class="text-[11px] font-sans text-[#786F66] tracking-wider mt-6">
+          5 October 2026, 4:00 PM IST (Asia/Kolkata)
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. WEDDING DETAILS
+         ========================================================================= -->
+    <section id="details" class="py-16 reveal-on-scroll">
+      <div class="text-center space-y-2 mb-8">
+        <p class="text-[11px] font-sans tracking-[0.3em] text-[#786F66] uppercase">CEREMONY &amp; RECEPTION</p>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl text-[#201D1A] font-light">
+          Wedding Details
+        </h2>
+      </div>
+
+      <div class="card-luxury p-8 sm:p-12 rounded-[2.5rem] text-center relative shadow-xl">
+        <!-- Date Badge -->
+        <div class="space-y-1 mb-6">
+          <p class="text-xs font-sans tracking-[0.25em] text-[#C2A366] uppercase font-medium">MONDAY</p>
+          <div class="font-serif-luxury text-3xl sm:text-4xl text-[#201D1A] tracking-wider uppercase">
+            5 OCTOBER 2026
+          </div>
+          <p class="font-serif-luxury italic text-xl text-[#786F66]">
+            4:00 PM
+          </p>
+        </div>
+
+        <!-- Delicate Botanical Divider -->
+        <div class="botanical-divider my-8 max-w-xs mx-auto">
+          <svg class="w-6 h-6 text-[#C2A366]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M12 2L15 8L21 9L17 14L18 20L12 17L6 20L7 14L3 9L9 8L12 2Z" />
+          </svg>
+        </div>
+
+        <!-- Venue Name & Address -->
+        <div class="space-y-2">
+          <p class="text-[11px] font-sans tracking-[0.25em] text-[#786F66] uppercase">AT THE HISTORIC SANCTUARY OF</p>
+          <h3 class="font-serif-luxury text-2xl sm:text-3xl text-[#201D1A] font-medium tracking-wide">
+            ST. JOSEPH MALANKARA CATHOLIC CHURCH
+          </h3>
+          <p class="font-serif-luxury italic text-xl text-[#C2A366]">
+            PUNALUR
+          </p>
+          <p class="text-xs text-[#786F66] font-sans tracking-wide pt-1">
+            Kollam District, Kerala, India
+          </p>
+        </div>
+
+        <!-- Add to Calendar Button directly in Details Card -->
+        <div class="mt-8 pt-6 border-t border-[#C2A366]/20">
+          <button type="button" 
+                  class="trigger-add-calendar inline-flex items-center space-x-2.5 px-8 py-3.5 rounded-full bg-[#201D1A] text-[#FAF7F2] text-xs font-sans tracking-[0.25em] uppercase shadow-md transition-all duration-300 hover:bg-[#C2A366] hover:text-[#201D1A] hover:shadow-lg active:scale-95">
+            <svg class="w-4 h-4 text-[#C2A366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            <span>ADD TO CALENDAR</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. VENUE & GOOGLE MAPS SECTION
+         ========================================================================= -->
+    <section id="venue" class="py-16 reveal-on-scroll">
+      <div class="card-luxury p-8 sm:p-10 rounded-[2.5rem] relative overflow-hidden shadow-xl">
+        <div class="text-center space-y-3 mb-8">
+          <p class="text-[11px] font-sans tracking-[0.3em] text-[#786F66] uppercase">SACRED VENUE</p>
+          <h2 class="font-serif-luxury text-3xl sm:text-4xl text-[#201D1A] font-light">
+            St. Joseph Malankara Catholic Church
+          </h2>
+          <p class="font-serif-luxury italic text-lg text-[#C2A366]">Punalur</p>
+        </div>
+
+        <!-- Stylized Map Visual / Card Preview -->
+        <div class="rounded-2xl overflow-hidden border border-[#C2A366]/30 bg-[#FAF7F2] relative aspect-[16/9] mb-8 shadow-inner flex items-center justify-center p-6 text-center">
+          <!-- Delicate church line illustration -->
+          <div class="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
+            <svg class="w-48 h-48 text-[#201D1A]" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M50 10 L50 22 M44 16 L56 16" />
+              <path d="M50 22 L25 45 L75 45 Z" />
+              <path d="M30 45 L30 90 L70 90 L70 45" />
+              <path d="M42 90 L42 65 C42 60 58 60 58 65 L58 90" />
+            </svg>
+          </div>
+
+          <div class="relative z-10 space-y-2">
+            <div class="w-10 h-10 rounded-full bg-white/90 border border-[#C2A366]/40 flex items-center justify-center mx-auto shadow-sm">
+              <svg class="w-5 h-5 text-[#C2A366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <p class="font-serif-luxury text-lg text-[#201D1A] font-medium">St. Joseph Malankara Catholic Church</p>
+            <p class="text-xs text-[#786F66] font-sans">Punalur, Kerala</p>
+          </div>
+        </div>
+
+        <!-- Action Buttons: VIEW LOCATION & GET DIRECTIONS -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <!-- Exact Google Maps URL -->
+          <a href="https://maps.app.goo.gl/kZm5MFy6tTdUcsYd6" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#201D1A] text-[#FAF7F2] text-xs font-sans tracking-[0.25em] uppercase text-center shadow-lg transition-all duration-300 hover:bg-[#C2A366] hover:text-[#201D1A] hover:shadow-xl active:scale-95">
+            VIEW LOCATION
+          </a>
+
+          <!-- Get Directions (opens exact Google Maps link) -->
+          <a href="https://maps.app.goo.gl/kZm5MFy6tTdUcsYd6" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white border border-[#C2A366]/40 text-[#201D1A] text-xs font-sans tracking-[0.25em] uppercase text-center shadow-sm transition-all duration-300 hover:border-[#C2A366] hover:bg-[#FAF7F2] active:scale-95">
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <!-- Copy Address Utility -->
+        <div class="mt-6 text-center">
+          <button id="btn-copy-address" 
+                  type="button" 
+                  class="text-[11px] font-sans text-[#786F66] hover:text-[#201D1A] underline underline-offset-4 tracking-wider transition-colors">
+            Copy Address to Clipboard
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. ADD TO CALENDAR SECTION (Dedicated & Prominent)
+         ========================================================================= -->
+    <section id="calendar-section" class="py-16 text-center reveal-on-scroll">
+      <div class="card-luxury p-8 sm:p-12 rounded-[2.5rem] shadow-xl">
+        <div class="w-12 h-12 rounded-full border border-[#C2A366]/40 flex items-center justify-center mx-auto mb-5 text-[#C2A366]">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+
+        <h2 class="font-serif-luxury text-2xl sm:text-3xl text-[#201D1A] font-light mb-3">
+          Save Our Date
+        </h2>
+        <p class="text-xs sm:text-sm font-sans text-[#786F66] max-w-sm mx-auto mb-8 leading-relaxed">
+          Please add our wedding to your digital calendar so you can celebrate with us seamlessly.
+        </p>
+
+        <!-- Prominent Minimalist Add to Calendar Button -->
+        <div class="flex flex-col items-center justify-center gap-4">
+          <button type="button" 
+                  class="trigger-add-calendar inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-[#201D1A] text-[#FAF7F2] text-xs font-sans tracking-[0.25em] uppercase shadow-lg transition-all duration-300 hover:bg-[#C2A366] hover:text-[#201D1A] hover:shadow-xl active:scale-95">
+            <svg class="w-4 h-4 text-[#C2A366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"></path>
+            </svg>
+            <span>ADD TO CALENDAR</span>
+          </button>
+
+          <!-- Direct One-Tap Quick Actions -->
+          <div class="flex flex-wrap items-center justify-center gap-2.5 pt-2">
+            <button type="button" 
+                    id="btn-direct-google-cal"
+                    class="px-4 py-2 rounded-full bg-white/80 border border-[#C2A366]/30 text-[11px] font-sans tracking-wider text-[#201D1A] hover:border-[#C2A366] hover:bg-white transition-all shadow-sm">
+              🗓️ Google Calendar
+            </button>
+            <button type="button" 
+                    id="btn-direct-apple-cal"
+                    class="px-4 py-2 rounded-full bg-white/80 border border-[#C2A366]/30 text-[11px] font-sans tracking-wider text-[#201D1A] hover:border-[#C2A366] hover:bg-white transition-all shadow-sm">
+              🍏 Apple Calendar (.ics)
+            </button>
+          </div>
+        </div>
+
+        <p class="text-[10px] font-sans text-[#786F66] tracking-wider uppercase mt-6">
+          5 October 2026 • 4:00 PM IST
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         10. FINAL INVITATION SECTION
+         ========================================================================= -->
+    <section id="final" class="py-24 text-center reveal-on-scroll">
+      <div class="space-y-6">
+        
+        <p class="text-xs sm:text-sm font-sans tracking-[0.35em] text-[#786F66] uppercase">
+          WE WOULD LOVE TO HAVE YOU WITH US
+        </p>
+
+        <div class="space-y-2">
+          <h2 class="font-serif-luxury text-4xl sm:text-5xl font-light tracking-[0.15em] text-[#201D1A] uppercase">
+            ANEESH &amp; NANDA
+          </h2>
+          <p class="font-serif-luxury tracking-[0.25em] text-sm text-[#C2A366] uppercase font-medium">
+            5 OCTOBER 2026
+          </p>
+        </div>
+
+        <div class="botanical-divider my-6 max-w-xs mx-auto">
+          <div class="w-1.5 h-1.5 rounded-full bg-[#C2A366]"></div>
+        </div>
+
+        <p class="font-serif-luxury italic text-xl sm:text-2xl text-[#201D1A] max-w-md mx-auto leading-relaxed">
+          &ldquo;Your presence and blessings mean the world to us.&rdquo;
+        </p>
+
+        <!-- Social Share Button -->
+        <div class="pt-8">
+          <button id="btn-share-whatsapp" 
+                  type="button" 
+                  class="inline-flex items-center space-x-2 px-6 py-3 rounded-full border border-[#C2A366]/40 bg-white/70 backdrop-blur-sm text-xs font-sans tracking-[0.2em] text-[#201D1A] uppercase hover:bg-white hover:border-[#C2A366] transition-all shadow-sm active:scale-95">
+            <svg class="w-4 h-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.949.813 2.796.813 3.183 0 5.767-2.586 5.768-5.766 0-3.18-2.585-5.766-5.768-5.766zm3.376 8.204c-.14.394-.712.723-1.002.766-.289.043-.61.082-1.802-.382-.998-.388-1.637-1.396-1.687-1.462-.049-.065-.401-.533-.401-1.018 0-.485.253-.724.343-.822.09-.098.196-.123.262-.123.066 0 .131.001.189.004.06.002.141-.023.22.167.082.197.279.68.303.73.025.049.041.107.008.172-.033.066-.05.107-.099.164-.049.057-.104.127-.149.172-.049.049-.1.103-.043.202.057.098.254.419.546.679.376.335.693.439.791.488.098.049.156.041.213-.025.057-.066.246-.287.312-.386.066-.098.131-.082.22-.049.09.033.57.269.668.318.098.049.164.074.189.115.025.041.025.239-.115.633zM12 2C6.477 2 2 6.477 2 12c0 1.826.49 3.538 1.344 5.01L2 22l5.146-1.317C8.577 21.499 10.233 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+            </svg>
+            <span>Share Invitation</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer Note -->
+      <footer class="mt-20 pt-8 border-t border-[#C2A366]/20 text-center space-y-2">
+        <p class="font-serif-luxury text-sm tracking-[0.25em] text-[#786F66] uppercase">
+          Aneesh &amp; Nanda &bull; 2026
+        </p>
+        <p class="text-[10px] font-sans text-[#786F66]/70 tracking-widest uppercase">
+          Crafted with love for our celebration
+        </p>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       CALENDAR MODAL
+       ========================================================================= -->
+  <div id="calendar-modal" class="hidden fixed inset-0 z-50 bg-[#201D1A]/50 backdrop-blur-sm flex items-end sm:items-center justify-center p-4">
+    <div class="bg-[#FAF7F2] w-full max-w-md rounded-t-[2rem] sm:rounded-[2rem] p-6 sm:p-8 border border-[#C2A366]/30 shadow-2xl space-y-6">
+      <div class="flex items-center justify-between pb-4 border-b border-[#C2A366]/20">
+        <div>
+          <h3 class="font-serif-luxury text-xl text-[#201D1A]">Add to Calendar</h3>
+          <p class="text-xs text-[#786F66]">5 October 2026 at 4:00 PM</p>
+        </div>
+        <button id="close-calendar-modal" 
+                aria-label="Close calendar options"
+                class="w-9 h-9 rounded-full border border-[#C2A366]/30 flex items-center justify-center text-[#786F66] hover:text-[#201D1A]">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="space-y-3">
+        <!-- Google Calendar Button -->
+        <button id="btn-google-calendar" 
+                type="button" 
+                class="w-full flex items-center justify-between p-4 rounded-xl bg-white border border-[#C2A366]/30 shadow-sm hover:border-[#C2A366] transition-all text-left">
+          <div class="flex items-center space-x-3">
+            <span class="text-lg">🗓️</span>
+            <div>
+              <p class="text-sm font-medium text-[#201D1A]">Google Calendar</p>
+              <p class="text-[11px] text-[#786F66]">Direct link for Android &amp; Browser</p>
+            </div>
+          </div>
+          <span class="text-xs font-sans tracking-widest text-[#C2A366] uppercase">&rarr;</span>
+        </button>
+
+        <!-- Apple Calendar / iPhone Button -->
+        <button id="btn-apple-calendar" 
+                type="button" 
+                class="w-full flex items-center justify-between p-4 rounded-xl bg-white border border-[#C2A366]/30 shadow-sm hover:border-[#C2A366] transition-all text-left">
+          <div class="flex items-center space-x-3">
+            <span class="text-lg">🍏</span>
+            <div>
+              <p class="text-sm font-medium text-[#201D1A]">Apple Calendar (iPhone / Mac)</p>
+              <p class="text-[11px] text-[#786F66]">Instantly add to iOS Calendar (.ics)</p>
+            </div>
+          </div>
+          <span class="text-xs font-sans tracking-widest text-[#C2A366] uppercase">&rarr;</span>
+        </button>
+
+        <!-- General .ICS Download Button -->
+        <button id="btn-download-ics" 
+                type="button" 
+                class="w-full flex items-center justify-between p-4 rounded-xl bg-white border border-[#C2A366]/30 shadow-sm hover:border-[#C2A366] transition-all text-left">
+          <div class="flex items-center space-x-3">
+            <span class="text-lg">📥</span>
+            <div>
+              <p class="text-sm font-medium text-[#201D1A]">Download iCalendar File</p>
+              <p class="text-[11px] text-[#786F66]">Compatible with Outlook &amp; all apps</p>
+            </div>
+          </div>
+          <span class="text-xs font-sans tracking-widest text-[#C2A366] uppercase">&rarr;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Vite entry module -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
