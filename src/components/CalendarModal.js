@@ -1,85 +1,40 @@
 /**
- * Calendar Event Integration for Android, iPhone, and Desktop
- * Generates standard RFC 5545 .ics files and Google Calendar deep links
+ * Direct One-Tap Add to Calendar Handler (iOS Apple Calendar & Android/Web Google Calendar)
+ * No confusing format download sections.
  */
 import weddingConfig from '../config/weddingConfig.js';
 
 export class CalendarModal {
   constructor() {
-    this.modal = document.getElementById('calendar-modal');
-    this.openBtns = document.querySelectorAll('.trigger-add-calendar');
-    this.closeBtn = document.getElementById('close-calendar-modal');
-    this.downloadIcsBtn = document.getElementById('btn-download-ics');
-    this.googleCalBtn = document.getElementById('btn-google-calendar');
-    this.appleCalBtn = document.getElementById('btn-apple-calendar');
-
+    this.buttons = document.querySelectorAll('.trigger-add-calendar');
     this.init();
   }
 
   init() {
-    this.openBtns.forEach(btn => {
+    this.buttons.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        this.open();
+        this.directAddToCalendar();
       });
-    });
-
-    if (this.closeBtn) {
-      this.closeBtn.addEventListener('click', () => this.close());
-    }
-
-    if (this.modal) {
-      this.modal.addEventListener('click', (e) => {
-        if (e.target === this.modal) this.close();
-      });
-    }
-
-    if (this.downloadIcsBtn) {
-      this.downloadIcsBtn.addEventListener('click', () => this.downloadICS());
-    }
-
-    if (this.appleCalBtn) {
-      this.appleCalBtn.addEventListener('click', () => this.downloadICS());
-    }
-
-    if (this.googleCalBtn) {
-      this.googleCalBtn.addEventListener('click', () => this.openGoogleCalendar());
-    }
-
-    const directGoogle = document.getElementById('btn-direct-google-cal');
-    if (directGoogle) {
-      directGoogle.addEventListener('click', () => this.openGoogleCalendar());
-    }
-
-    const directApple = document.getElementById('btn-direct-apple-cal');
-    if (directApple) {
-      directApple.addEventListener('click', () => this.downloadICS());
-    }
-
-    // Escape key listener
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.modal && !this.modal.classList.contains('hidden')) {
-        this.close();
-      }
     });
   }
 
-  open() {
-    if (!this.modal) return;
-    this.modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  }
+  directAddToCalendar() {
+    // Detect iOS (iPhone / iPad / iPod / Safari)
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
-  close() {
-    if (!this.modal) return;
-    this.modal.classList.add('hidden');
-    document.body.style.overflow = '';
+    if (isIOS) {
+      // Direct Apple Calendar event via .ics download
+      this.downloadICS();
+    } else {
+      // Direct Google Calendar event creation
+      this.openGoogleCalendar();
+    }
   }
 
   generateICSContent() {
-    // 5 October 2026, 4:00 PM IST to 8:00 PM IST
-    // IST is UTC+5:30 -> 16:00 IST = 10:30 UTC
-    // End: 20:00 IST = 14:30 UTC
+    // 5 October 2026, 4:00 PM IST to 8:00 PM IST (Asia/Kolkata UTC+5:30 -> 10:30 UTC)
     const startUTC = '20261005T103000Z';
     const endUTC = '20261005T143000Z';
     const nowUTC = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
@@ -87,7 +42,7 @@ export class CalendarModal {
     return [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//Aneesh Albert & Nanda Rajan//Wedding Invitation//EN',
+      'PRODID:-//Aneesh Abraham & Nanda Rajan//Wedding Invitation//EN',
       'CALSCALE:GREGORIAN',
       'METHOD:PUBLISH',
       'BEGIN:VEVENT',
@@ -115,7 +70,6 @@ export class CalendarModal {
     link.click();
     document.body.removeChild(link);
     window.URL.revokeObjectURL(link.href);
-    this.close();
   }
 
   openGoogleCalendar() {
@@ -129,6 +83,5 @@ export class CalendarModal {
 
     const googleUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startUTC}/${endUTC}&details=${details}&location=${location}`;
     window.open(googleUrl, '_blank', 'noopener,noreferrer');
-    this.close();
   }
 }

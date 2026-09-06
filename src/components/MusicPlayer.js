@@ -1,17 +1,18 @@
 /**
- * Background Music Controller with Browser Autoplay Handling & Persistence
+ * Background Music Controller with Immediate Autoplay & Gesture Unlock
  */
 import weddingConfig from '../config/weddingConfig.js';
 
 export class MusicPlayer {
   constructor() {
-    this.audio = new Audio(weddingConfig.media.music.src);
+    // Check if HTML already has audio element or create new
+    this.audio = document.getElementById('wedding-audio') || new Audio(weddingConfig.media.music.src);
     this.audio.loop = weddingConfig.media.music.loop;
     this.audio.volume = weddingConfig.media.music.defaultVolume;
 
     this.isPlaying = false;
     this.isMuted = false;
-    this.hasUserInteracted = false;
+    this.manuallyPaused = false;
 
     // DOM Elements
     this.floatingBtn = document.getElementById('music-toggle-btn');
@@ -24,16 +25,42 @@ export class MusicPlayer {
   }
 
   init() {
-    // Read session state
-    const savedState = sessionStorage.getItem('wedding_music_state');
+    // Check if user previously muted
     const wasMuted = sessionStorage.getItem('wedding_music_muted') === 'true';
-
     if (wasMuted) {
       this.isMuted = true;
       this.audio.muted = true;
     }
 
-    // Set up click handlers
+    // Attempt instant autoplay immediately on page load
+    this.play().catch(() => {});
+
+    // Multi-event gesture unlock for mobile browsers (Safari/Chrome)
+    const unlockAudioEvents = ['touchstart', 'touchend', 'click', 'scroll', 'pointerdown', 'keydown'];
+    const onUserInteraction = () => {
+      if (!this.isPlaying && !this.manuallyPaused) {
+        this.play().catch(() => {});
+      }
+      unlockAudioEvents.forEach(evt => {
+        window.removeEventListener(evt, onUserInteraction);
+        document.removeEventListener(evt, onUserInteraction);
+      });
+    };
+
+    unlockAudioEvents.forEach(evt => {
+      window.addEventListener(evt, onUserInteraction, { passive: true, once: true });
+      document.addEventListener(evt, onUserInteraction, { passive: true, once: true });
+    });
+
+    // Intro curtain click unlock
+    const curtain = document.getElementById('intro-curtain');
+    if (curtain) {
+      curtain.addEventListener('click', () => {
+        if (!this.isPlaying) this.play().catch(() => {});
+      }, { once: true });
+    }
+
+    // Set up floating button toggle
     if (this.floatingBtn) {
       this.floatingBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -48,22 +75,6 @@ export class MusicPlayer {
       });
     }
 
-    // Auto-listen for first user gesture to unlock audio context smoothly
-    const onFirstUserGesture = () => {
-      if (!this.hasUserInteracted) {
-        this.hasUserInteracted = true;
-        // If user previously played in this session, resume automatically
-        if (savedState === 'playing') {
-          this.play();
-        }
-      }
-      window.removeEventListener('click', onFirstUserGesture);
-      window.removeEventListener('touchstart', onFirstUserGesture);
-    };
-
-    window.addEventListener('click', onFirstUserGesture, { once: true });
-    window.addEventListener('touchstart', onFirstUserGesture, { once: true });
-
     // Handle audio events
     this.audio.addEventListener('play', () => this.updateUI(true));
     this.audio.addEventListener('pause', () => this.updateUI(false));
@@ -74,16 +85,18 @@ export class MusicPlayer {
     try {
       await this.audio.play();
       this.isPlaying = true;
+      this.manuallyPaused = false;
       sessionStorage.setItem('wedding_music_state', 'playing');
       this.dismissHint();
     } catch (err) {
-      console.warn("Audio autoplay blocked by browser until direct interaction.", err);
+      // Browser blocked zero-click autoplay; wait for gesture unlock
     }
   }
 
   pause() {
     this.audio.pause();
     this.isPlaying = false;
+    this.manuallyPaused = true;
     sessionStorage.setItem('wedding_music_state', 'paused');
   }
 

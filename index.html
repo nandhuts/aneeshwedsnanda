@@ -12,22 +12,22 @@
 
   <!-- Open Graph / WhatsApp Sharing Metadata -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nandhuts.github.io/aneeshwedsnanda/">
   <meta property="og:title" content="Aneesh Abraham &amp; Nanda Rajan | Our Wedding Story">
   <meta property="og:description" content="With grateful hearts and the blessings of our families, we invite you to celebrate the beginning of our forever on Monday, 5 October 2026 at St. Joseph Malankara Catholic Church, Punalur.">
-  <meta property="og:image" content="https://nandhuts.github.io/aneeshwedsnanda/images/og-image.jpg">
-  <meta property="og:image:secure_url" content="https://nandhuts.github.io/aneeshwedsnanda/images/og-image.jpg">
+  <meta property="og:image" content="/images/og-image.jpg">
+  <meta property="og:image:secure_url" content="/images/og-image.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Aneesh Abraham &amp; Nanda Rajan - Our Wedding Story">
   <meta property="og:site_name" content="Aneesh &amp; Nanda Wedding">
+  <link rel="image_src" href="/images/og-image.jpg">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Aneesh Abraham &amp; Nanda Rajan | Our Wedding Story">
   <meta name="twitter:description" content="With grateful hearts and the blessings of our families, we invite you to celebrate the beginning of our forever on Monday, 5 October 2026 at St. Joseph Malankara Catholic Church, Punalur.">
-  <meta name="twitter:image" content="https://nandhuts.github.io/aneeshwedsnanda/images/og-image.jpg">
+  <meta name="twitter:image" content="/images/og-image.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
@@ -40,6 +40,9 @@
 
 <body class="bg-[#FAF7F2] text-[#201D1A] antialiased selection:bg-[#C2A366]/20 relative">
 
+  <!-- Preloaded Audio for Instant Playback -->
+  <audio id="wedding-audio" src="./audio/wedding-music.wav" preload="auto" loop playsinline></audio>
+
   <!-- Tactile Paper & Film Grain Overlay -->
   <div class="paper-grain" aria-hidden="true"></div>
 
@@ -47,15 +50,16 @@
   <canvas id="petal-canvas" aria-hidden="true"></canvas>
 
   <!-- =========================================================================
-       1. OPENING EXPERIENCE OVERLAY (Fades seamlessly in 1.2s)
+       1. OPENING EXPERIENCE OVERLAY (Fades seamlessly or on first tap)
        ========================================================================= -->
-  <div id="intro-curtain" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FAF7F2] transition-opacity duration-1000">
+  <div id="intro-curtain" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FAF7F2] transition-opacity duration-1000 cursor-pointer">
     <div id="intro-monogram" class="flex flex-col items-center space-y-4 px-6 text-center animate-pulse">
       <div class="w-16 h-16 rounded-full border border-[#C2A366]/40 flex items-center justify-center shadow-sm">
         <span class="font-serif-luxury text-2xl text-[#201D1A] tracking-wider">A &amp; N</span>
       </div>
       <p class="font-serif-luxury text-sm tracking-[0.35em] text-[#786F66] uppercase">Wedding Invitation</p>
       <div class="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#C2A366]/60 to-transparent"></div>
+      <p class="text-[11px] font-sans text-[#786F66]/70 tracking-widest uppercase pt-2">Tap anywhere to enter ♫</p>
     </div>
   </div>
 
@@ -406,56 +410,7 @@
     </section>
 
     <!-- =========================================================================
-         8. ADD TO CALENDAR SECTION (Dedicated & Prominent)
-         ========================================================================= -->
-    <section id="calendar-section" class="py-16 text-center reveal-on-scroll">
-      <div class="card-luxury p-8 sm:p-12 rounded-[2.5rem] shadow-xl">
-        <div class="w-12 h-12 rounded-full border border-[#C2A366]/40 flex items-center justify-center mx-auto mb-5 text-[#C2A366]">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-          </svg>
-        </div>
-
-        <h2 class="font-serif-luxury text-2xl sm:text-3xl text-[#201D1A] font-light mb-3">
-          Save Our Date
-        </h2>
-        <p class="text-xs sm:text-sm font-sans text-[#786F66] max-w-sm mx-auto mb-8 leading-relaxed">
-          Please add our wedding to your digital calendar so you can celebrate with us seamlessly.
-        </p>
-
-        <!-- Prominent Minimalist Add to Calendar Button -->
-        <div class="flex flex-col items-center justify-center gap-4">
-          <button type="button" 
-                  class="trigger-add-calendar inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-[#201D1A] text-[#FAF7F2] text-xs font-sans tracking-[0.25em] uppercase shadow-lg transition-all duration-300 hover:bg-[#C2A366] hover:text-[#201D1A] hover:shadow-xl active:scale-95">
-            <svg class="w-4 h-4 text-[#C2A366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"></path>
-            </svg>
-            <span>ADD TO CALENDAR</span>
-          </button>
-
-          <!-- Direct One-Tap Quick Actions -->
-          <div class="flex flex-wrap items-center justify-center gap-2.5 pt-2">
-            <button type="button" 
-                    id="btn-direct-google-cal"
-                    class="px-4 py-2 rounded-full bg-white/80 border border-[#C2A366]/30 text-[11px] font-sans tracking-wider text-[#201D1A] hover:border-[#C2A366] hover:bg-white transition-all shadow-sm">
-              🗓️ Google Calendar
-            </button>
-            <button type="button" 
-                    id="btn-direct-apple-cal"
-                    class="px-4 py-2 rounded-full bg-white/80 border border-[#C2A366]/30 text-[11px] font-sans tracking-wider text-[#201D1A] hover:border-[#C2A366] hover:bg-white transition-all shadow-sm">
-              🍏 Apple Calendar (.ics)
-            </button>
-          </div>
-        </div>
-
-        <p class="text-[10px] font-sans text-[#786F66] tracking-wider uppercase mt-6">
-          5 October 2026 • 4:00 PM IST
-        </p>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         10. FINAL INVITATION SECTION
+         8. FINAL INVITATION SECTION
          ========================================================================= -->
     <section id="final" class="py-24 text-center reveal-on-scroll">
       <div class="space-y-6">
@@ -507,70 +462,6 @@
 
   </main>
 
-  <!-- =========================================================================
-       CALENDAR MODAL
-       ========================================================================= -->
-  <div id="calendar-modal" class="hidden fixed inset-0 z-50 bg-[#201D1A]/50 backdrop-blur-sm flex items-end sm:items-center justify-center p-4">
-    <div class="bg-[#FAF7F2] w-full max-w-md rounded-t-[2rem] sm:rounded-[2rem] p-6 sm:p-8 border border-[#C2A366]/30 shadow-2xl space-y-6">
-      <div class="flex items-center justify-between pb-4 border-b border-[#C2A366]/20">
-        <div>
-          <h3 class="font-serif-luxury text-xl text-[#201D1A]">Add to Calendar</h3>
-          <p class="text-xs text-[#786F66]">5 October 2026 at 4:00 PM</p>
-        </div>
-        <button id="close-calendar-modal" 
-                aria-label="Close calendar options"
-                class="w-9 h-9 rounded-full border border-[#C2A366]/30 flex items-center justify-center text-[#786F66] hover:text-[#201D1A]">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-
-      <div class="space-y-3">
-        <!-- Google Calendar Button -->
-        <button id="btn-google-calendar" 
-                type="button" 
-                class="w-full flex items-center justify-between p-4 rounded-xl bg-white border border-[#C2A366]/30 shadow-sm hover:border-[#C2A366] transition-all text-left">
-          <div class="flex items-center space-x-3">
-            <span class="text-lg">🗓️</span>
-            <div>
-              <p class="text-sm font-medium text-[#201D1A]">Google Calendar</p>
-              <p class="text-[11px] text-[#786F66]">Direct link for Android &amp; Browser</p>
-            </div>
-          </div>
-          <span class="text-xs font-sans tracking-widest text-[#C2A366] uppercase">&rarr;</span>
-        </button>
-
-        <!-- Apple Calendar / iPhone Button -->
-        <button id="btn-apple-calendar" 
-                type="button" 
-                class="w-full flex items-center justify-between p-4 rounded-xl bg-white border border-[#C2A366]/30 shadow-sm hover:border-[#C2A366] transition-all text-left">
-          <div class="flex items-center space-x-3">
-            <span class="text-lg">🍏</span>
-            <div>
-              <p class="text-sm font-medium text-[#201D1A]">Apple Calendar (iPhone / Mac)</p>
-              <p class="text-[11px] text-[#786F66]">Instantly add to iOS Calendar (.ics)</p>
-            </div>
-          </div>
-          <span class="text-xs font-sans tracking-widest text-[#C2A366] uppercase">&rarr;</span>
-        </button>
-
-        <!-- General .ICS Download Button -->
-        <button id="btn-download-ics" 
-                type="button" 
-                class="w-full flex items-center justify-between p-4 rounded-xl bg-white border border-[#C2A366]/30 shadow-sm hover:border-[#C2A366] transition-all text-left">
-          <div class="flex items-center space-x-3">
-            <span class="text-lg">📥</span>
-            <div>
-              <p class="text-sm font-medium text-[#201D1A]">Download iCalendar File</p>
-              <p class="text-[11px] text-[#786F66]">Compatible with Outlook &amp; all apps</p>
-            </div>
-          </div>
-          <span class="text-xs font-sans tracking-widest text-[#C2A366] uppercase">&rarr;</span>
-        </button>
-      </div>
-    </div>
-  </div>
   <!-- Vite entry module -->
   <script type="module" src="/src/main.js"></script>
 </body>
