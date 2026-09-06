@@ -136,10 +136,11 @@ export const weddingConfig = {
 
   // Social Sharing & Open Graph Metadata
   meta: {
-    siteTitle: "Aneesh Albert & Nanda Rajan | Wedding Invitation",
-    siteDescription: "Join us as we begin our beautiful new chapter together on 5 October 2026 at St. Joseph Malankara Catholic Church, Punalur.",
-    canonicalUrl: "https://aneesh-weds-nanda.wedding",
-    ogImage: "/images/og-image.jpg",
+    siteTitle: "Aneesh Abraham & Nanda Rajan | Our Wedding Story",
+    siteDescription: "With grateful hearts and the blessings of our families, we invite you to celebrate the beginning of our forever on Monday, 5 October 2026 at St. Joseph Malankara Catholic Church, Punalur.",
+    canonicalUrl: "https://nandhuts.github.io/aneeshwedsnanda/",
+    ogImage: "https://nandhuts.github.io/aneeshwedsnanda/images/og-image.jpg",
+    ogImageFallback: "./images/og-image.jpg",
     ogImageType: "image/jpeg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
